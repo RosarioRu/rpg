@@ -1,10 +1,10 @@
 export class MainCharacter {
-//   constructor (intelligence, charm, risk, resilience) {
-//   this.intelligence = intelligence;
-//   this.charm = charm;
-//   this.risk = risk;
-//   this.resilience = resilience;
-// }
+  constructor (intelligence, charm, risk, resilience) {
+  this.intelligence = intelligence;
+  this.charm = charm;
+  this.risk = risk;
+  this.resilience = resilience;
+}
 }
 
 /*class Triangle {

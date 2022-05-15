@@ -1,17 +1,39 @@
-export class MainCharacter {
-  constructor (intelligence, charm, risk, resilience) {
+export class Character {
+  constructor (intelligence, charm, risk, resilience, health) {
     this.intelligence = intelligence;
     this.charm = charm;
     this.risk = risk;
     this.resilience = resilience;
+    this.health = 100;
   }
+
+  reduceHealth(number) {
+    this.health = (this.health)-number;
+  }
+
+
 }
 
-export class Villian {
+
+
+/*  myfriends();
+  //this.myFriends = [makeFriend()];
+}
+
+export class Villain {
   constructor (cunning, snark, deceit, resilience) {
     this.cunning = cunning;
     this.snark = snark;
     this.deceit = deceit;
+    this.resilience = resilience;
+  }
+}
+
+export class Friend {
+  constructor (help, gullibility, trustworthiness, resilience) {
+    this.help = help;
+    this.gullibility = gullibility;
+    this.trustworthiness = trustworthiness;
     this.resilience = resilience;
   }
 }

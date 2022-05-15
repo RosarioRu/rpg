@@ -1,4 +1,5 @@
 import { MainCharacter } from "../src/rpg";
+import { Villian } from "../src/rpg";
 
 describe('MainCharacter', () => {
   test('it should create a main character object with 4 character properties', () => {
@@ -10,3 +11,12 @@ describe('MainCharacter', () => {
   });
 });
 
+describe('Villian', () => {
+  test('it should create a villian character with 4 character properties', () => {
+    const villian = new Villian (4, 4, 4, 4);
+    expect(villian.cunning).toEqual(4);
+    expect(villian.snark).toEqual(4);
+    expect(villian.deceit).toEqual(4);
+    expect(villian.resilience).toEqual(4);
+  });
+});

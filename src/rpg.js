@@ -1,10 +1,19 @@
 export class MainCharacter {
   constructor (intelligence, charm, risk, resilience) {
-  this.intelligence = intelligence;
-  this.charm = charm;
-  this.risk = risk;
-  this.resilience = resilience;
+    this.intelligence = intelligence;
+    this.charm = charm;
+    this.risk = risk;
+    this.resilience = resilience;
+  }
 }
+
+export class Villian {
+  constructor (cunning, snark, deceit, resilience) {
+    this.cunning = cunning;
+    this.snark = snark;
+    this.deceit = deceit;
+    this.resilience = resilience;
+  }
 }
 
 /*class Triangle {

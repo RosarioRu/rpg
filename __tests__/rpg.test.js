@@ -1,5 +1,5 @@
 import { Character } from "../src/rpg";
-import { Villain } from "../src/rpg";
+
 import { Friend } from "../src/rpg";
 
 describe('Character', () => {
@@ -20,10 +20,33 @@ describe('Character', () => {
   test('reduce the character health by 5 points', () => {
     newCharacter.reduceHealth(5);
     expect(newCharacter.health).toEqual(95);
-    console.log(newCharacter.health);
+    console.log("health after reduction: " + newCharacter.health);
   });
+
+  test('increases the character health by 5 points', () => {
+    newCharacter.increaseHealth(5);
+    expect(newCharacter.health).toEqual(105);
+    console.log("health is now: " + newCharacter.health);
+  });
+
+  
+  test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
+    let testCharacter = new Character(5,5,5,5);
+    testCharacter.rollHealth();
+    expect(testCharacter.health).not.toEqual(newCharacter.health);
+    console.log("testCharacter's health: "+ testCharacter.health + "newCharacter's health: " + newCharacter.health);
+    });
+  
   
 });
+
+// it('Should be true if age is larger than 18', () => {
+//   if(age > 18)
+//     {
+//       expect(true).toBeTruthy();
+//     }
+// });
+
 
 // describe('charmAttack', () => {
 //   beforEach(() => {

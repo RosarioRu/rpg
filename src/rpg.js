@@ -15,9 +15,18 @@ export class Character {
     this.health += number;
   }
 
-  rollHealth() {
+  rollHealth(randomNumber) {
+    // let roll = Math.floor(Math.random() * 20) + 1;
+    if (randomNumber>= 10) {
+      this.health += 10;
+    } else {
+      this.health -= 10;
+    }
+  }
+
+  randomAttack() {
     let roll = Math.floor(Math.random() * 20) + 1;
-    if (roll >= 10) {
+    if (roll>= 10) {
       this.health += 10;
     } else {
       this.health -= 10;

@@ -30,14 +30,37 @@ describe('Character', () => {
   });
 
   
-  test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
-    let testCharacter = new Character(5,5,5,5);
-    testCharacter.rollHealth();
-    expect(testCharacter.health).not.toEqual(newCharacter.health);
-    console.log("testCharacter's health: "+ testCharacter.health + "newCharacter's health: " + newCharacter.health);
+  // test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
+  //   let testCharacter = new Character(5,5,5,5);
+  //   testCharacter.rollHealth();
+  //   expect(testCharacter.health).not.toEqual(newCharacter.health);
+  //   console.log("testCharacter's health: "+ testCharacter.health + "newCharacter's health: " + newCharacter.health);
+  //   });
+
+  test('it should increase health by 10pts', () => {
+  newCharacter.rollHealth(12);
+  expect(newCharacter.health).toEqual(110);
+  });
+
+  test('it should decrease health by 10pts', () => {
+    newCharacter.rollHealth(5);
+    expect(newCharacter.health).toEqual(90);
     });
   
-  
+  expect.extend {
+    toBeWithinRange() {
+      //a function we would create that would be able to look at two different outcomes
+    }
+  }
+
+  test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
+    newCharacter.randomAttack();
+    expect(newCharacter.health).toBeWithinRange(90, 110);
+  });
+
+      
+
+
 });
 
 // it('Should be true if age is larger than 18', () => {

@@ -47,21 +47,86 @@ describe('Character', () => {
     expect(newCharacter.health).toEqual(90);
     });
   
-  expect.extend {
-    toBeWithinRange() {
-      //a function we would create that would be able to look at two different outcomes
-    }
-  }
+  // expect.extend({
+  //   toBeHighLow(received) {
+  //     //a function we would create that would be able to look at two different outcomes
+  //     //const randomNumReceived = received >= minNum && received <= maxNum;
+  //     let randomReceivedHigh = received >= 10;
+  //     let randomReceivedLow = received < 10;
+  //     if(randomReceivedHigh) {
+  //       return {
+  //         pass: true,
+  //       };
+  //     } else if (randomReceivedLow) {
+  //       return {
+  //         pass: false,
+  //       };
+  //     }
+  //   },
+  // });
 
-  test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
-    newCharacter.randomAttack();
-    expect(newCharacter.health).toBeWithinRange(90, 110);
+  //   test('it should increase or decrease health by 10pts depending on randomly generated numberer', () => {
+  //   newCharacter.randomAttack();
+  //   expect(newCharacter.health).toBeWithinRange(90, 110);
+  // });
+
+  // test('random number should increase or decrease health by 10 points', () => {
+  //   newCharacter.rollHealth();
+  //  // expect(newCharacter.health).toEqual(110);
+  //   expect(newCharacter.health).toEqual(90);
+  // });
+
+  expect.extend({
+    runTillBothHappen(functionToRun) {
+      let firstPossibility = false; 
+      let secondPossibility = false;       
+      let bothTrue = false;
+      while (bothTrue = false) {
+        functionToRun;
+        if (functionToRun === 110) {
+          firstPossibility = true;
+          if (firstPossibility === secondPossibility) {
+            bothTrue = true;
+            pass: true;
+          }
+        } else {
+          secondPossibility = true;
+          if (firstPossibility === secondPossibility) {
+            bothTrue = true;
+            pass: true;
+          }
+        }
+        return pass;
+      };
+    }
   });
+  
+  
+  test('it should return pass if both things happen', () => {
+    newCharacter.randomAttack();
+    expect(newCharacter.randomAttack()).runTillBothHappen();
+    });
+
+
+      
+
+      
+      // functionToRun;
+      // if (functionToRun === 110) {
+      //   firstPossibility = true;
+      //   if (bothTrue = true) {
+      //     return true;
+      //   } else {
+      //     //start again
+      // } else {
+      //   secondPossibility = true;
+
+});
 
       
 
 
-});
+// });
 
 // it('Should be true if age is larger than 18', () => {
 //   if(age > 18)
@@ -119,4 +184,4 @@ describe('Character', () => {
 //     expect(friend.trustworthiness).toEqual(6);
 //     expect(friend.resilience).toEqual(6);
 // //   });
-// });
+// 
